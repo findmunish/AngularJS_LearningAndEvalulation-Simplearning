@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <button type="button" class="btn btn-primary" [ngClass]="{'btn-dark': showView === 'http'}" (click)="showView = 'http'">Http-Demo</button>
+  <button type="button" class="btn btn-primary" [ngClass]="{'btn-dark': showView === 'eval'}" (click)="showView = 'eval'">Evaluation-Assignment</button>
+</div>
+<div class="card" *ngIf="showView" style="margin-top: 15px;">
+		<app-http-fetch-comp *ngIf="showView === 'http'"> </app-http-fetch-comp>
+    <app-evaluation-19-sep-2020-comp *ngIf="showView === 'eval'"> </app-evaluation-19-sep-2020-comp>
+</div>

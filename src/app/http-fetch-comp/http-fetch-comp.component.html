@@ -1,0 +1,19 @@
+<p> http-fetch-comp works! </p>
+
+<h4>Displaying html data</h4>
+
+<table style="width:100%" border="1px">
+  <h1>User Data</h1>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor = "let record of httpFetchedData">
+    <td> {{record.id}} </td>
+    <td >{{record.name}} </td>
+    <td> {{record.username}} </td>
+    <td> {{record.email}} </td>
+  </tr>
+</table>

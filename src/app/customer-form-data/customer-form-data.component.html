@@ -1,0 +1,54 @@
+<p>customer-form-data works!</p>
+
+<p> template-forms works! </p>
+<form #customerDataForm="ngForm" (ngSubmit)="onFormSubmit()">
+  <label>First Name: </label>
+  <input type="text" name="customerFirstName" [(ngModel)]="customer.custFName" #customerFirstName="ngModel" placeholder="First name please...." required>
+  <br/><br/>
+  <div *ngIf="customerFirstName.invalid && (customerFirstName.dirty || customerFirstName.touched)" class="alert">
+    <div *ngIf="customerFirstName.errors.required">
+      First name is a required input
+    </div>
+  </div>
+  <label>Last Name: </label>
+  <input type="text" name="customerLastName" [(ngModel)]="customer.custLName" #customerLastName="ngModel" placeholder="Last name please...." required>
+  <br/><br/>
+  <div *ngIf="customerLastName.invalid && (customerLastName.dirty || customerLastName.touched)" class="alert">
+    <div *ngIf="customerLastName.errors.required">
+      Last name is a required input
+    </div>
+  </div>
+  <label>Email: </label>
+  <input type="email" name="customerEmail" [(ngModel)]="customer.email" #customerEmail="ngModel" placeholder="Email please...." required>
+  <br/><br/>
+  <div *ngIf="customerEmail.invalid && (customerEmail.dirty || customerEmail.touched)" class="alert">
+    <div *ngIf="customerEmail.errors.required">
+      Email is required input
+    </div>
+  </div>
+  <br/><br/>
+  <label>Contact Number: </label>
+  <input type="text" name="customerContactNum" [(ngModel)]="customer.contact" #customerContactNum="ngModel" placeholder="Contact number please...." required minlength="10">
+  <div *ngIf="customerContactNum.invalid && (customerContactNum.dirty || customerContactNum.touched)" class="alert">
+    <div *ngIf="customerContactNum.errors.required">
+      Contact number is required input
+    </div>
+    <div *ngIf="customerContactNum.errors.minlength">
+      Minimum digits in contact number must be 10
+    </div>
+  </div>
+  <br/><br/>
+  <label>Select Gender: </label>
+  <select name="custmerGender" [(ngModel)]="customer.gender" #custmerGender="ngModel" required>
+    <option male>Male</option>
+    <option female>Female</option>
+    <option others>Others</option>
+  </select>
+  <div *ngIf="custmerGender.invalid && (custmerGender.dirty || custmerGender.touched)" class="alert">
+    <div *ngIf="custmerGender.errors.required">
+      Gender selection is a required input
+    </div>
+  </div>
+  <br/><br/>
+  <input type="submit" [disabled]="customerDataForm.invalid" value="Submit">
+</form>

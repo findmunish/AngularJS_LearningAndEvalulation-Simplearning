@@ -1,0 +1,16 @@
+<p> customer-status-comp works! </p>
+
+<table style="width:100%">
+  <tr>
+    <th>Customer Id</th>
+    <th>Customer Name</th>
+    <th>Customer Status</th>
+    <th>Toggle Status</th>
+  </tr>
+  <tr *ngFor = "let customer of customers">
+    <td [ngStyle]="{backgroundColor:getBgColor(customer)}">{{customer._id}}</td>
+    <td [ngStyle]="{backgroundColor:getBgColor(customer)}">{{customer.name}}</td>
+    <td [ngStyle]="{backgroundColor:getBgColor(customer)}">{{customer.status}}</td>
+    <td [ngStyle]="{backgroundColor:getBgColor(customer)}"> <button (click)="toggleStatus(customer)">Toggle</button></td>
+  </tr>
+</table>

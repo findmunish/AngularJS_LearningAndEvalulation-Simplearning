@@ -1,0 +1,23 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<form #assignmentForm="ngForm" (ngSubmit)="openComponent()">
+  <label class="spacing">Please choose:</label>
+  <select [(ngModel)]="assignmentSelected" class="spacing" name="selectAssignment" required>
+    <option *ngFor = "let assignment of assignmentList">{{assignment}}</option>
+  </select>
+  <input type="submit" [disabled]="assignmentForm.invalid" class="btn btn-primary" [ngClass]="{'btn-dark': assignmentForm.valid}" value="Execute Assignment">
+
+</form>
+<div *ngIf="assignmentFlags[0]">
+  <app-assignment-06-sep-2020-comp></app-assignment-06-sep-2020-comp>
+</div>
+<div *ngIf="assignmentFlags[1]">
+  <app-assignment-12-sep-2020-comp> </app-assignment-12-sep-2020-comp>
+</div>
+<div *ngIf="assignmentFlags[2]">
+  <app-assignment-13-sep-2020-comp></app-assignment-13-sep-2020-comp>
+</div>
+<div *ngIf="assignmentFlags[3]">
+  <app-assignment-19-sep-2020-comp></app-assignment-19-sep-2020-comp>
+</div>

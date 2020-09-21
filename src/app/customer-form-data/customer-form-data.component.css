@@ -1,0 +1,13 @@
+.alert {
+    color: red;
+    border-left: 5px solid red;
+}
+.form-basic{
+    border:5px solid black;
+}
+.form-input-failed{
+    border:5px solid red;
+}
+.form-input-correct{
+    border:5px solid green;
+}

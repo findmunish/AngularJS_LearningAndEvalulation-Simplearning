@@ -1,0 +1,28 @@
+<p>
+  child-comp works!
+</p>
+
+<table style="width:100%" border="1px">
+  <h1>Customer Data From Parent</h1>
+  <tr>
+    <th>Id</th>
+    <th>Send Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Contact Number</th>
+    <th>Address</th>
+    <th>Is Verified?</th>
+    <th>Verify Customer</th>
+  </tr>
+  <tr *ngFor = "let customer of updatedCustomers">
+    <td>{{customer._id}}</td>
+    <td> <button (click)="sendCustomerId(customer)">Send Id</button></td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.age}}</td>
+    <td>{{customer.contactNum}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.isVerified}}</td>
+    <td *ngIf="customer.isVerified"><button (click)="toggleVerification(customer)">Unverify</button></td>
+    <td *ngIf="!customer.isVerified"><button (click)="toggleVerification(customer)">Verify</button></td>
+  </tr>
+</table>
