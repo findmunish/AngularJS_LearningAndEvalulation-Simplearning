@@ -1,0 +1,27 @@
+<div class="card-body">
+	<h5 class="card-title">Customer Form</h5>
+	<form [formGroup]="customerForm" (ngSubmit)="!disableSubmitBtn && submitCustomerForm()">
+		<div class="form-group">
+			<label for="firstName">First Name</label>
+			<input type="text" id="firstName" class="form-control" formControlName="firstName">
+  </div>
+			<div class="form-group">
+				<label for="lastName">Last Name</label>
+				<input type="text" id="lastName" class="form-control" formControlName="lastName">
+  </div>
+				<div class="form-group">
+					<label for="contact">Contact Number</label>
+					<input type="text" id="contact" class="form-control" formControlName="contact">
+  </div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="text" id="email" class="form-control" formControlName="email">
+  </div>
+						<button type="submit" [disabled]="disableSubmitBtn" class="btn btn-success">Submit</button>
+	</form>
+  <div style="margin-top: 15px;">
+		<div class="alert alert-success" role="alert" *ngIf="alertMessage">
+			{{alertMessage}}
+		</div>
+	</div>
+</div>

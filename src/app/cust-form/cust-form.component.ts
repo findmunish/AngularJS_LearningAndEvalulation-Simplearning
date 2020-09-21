@@ -17,12 +17,12 @@ export class CustFormComponent implements OnInit {
     email: ['', Validators.required]
   });
 
-  disableSubmit: boolean = true;
+  disableSubmitBtn: boolean = true;
   alertMessage = '';
   ngOnInit() {
     this.customerForm.valueChanges.subscribe(customer => {
       this.alertMessage = '';
-      this.disableSubmit = !(customer.firstName && customer.lastName && customer.contact && customer.email);
+      this.disableSubmitBtn = !(customer.firstName && customer.lastName && customer.contact && customer.email);
     });
   }
 
@@ -30,6 +30,6 @@ export class CustFormComponent implements OnInit {
   submitCustomerForm() {
     this.addCustomer.emit(this.customerForm.value);
     this.customerForm.reset();
-    this.alertMessage = 'Added to Customers List, You can check in Display Tab!';
+    this.alertMessage = "Added to Customers List. Please check the 'Display' Tab!";
   }
 }

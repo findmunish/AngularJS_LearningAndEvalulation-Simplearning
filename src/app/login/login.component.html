@@ -13,10 +13,11 @@
 	</form>
 	<div style="margin-top: 15px;" *ngIf="alertMessage !== ''">
 		<div class="alert alert-success" role="alert" *ngIf="loggedIn">
-			Valid Credentials
+			{{alertMessage}}
 		</div>
 		<div class="alert alert-danger" role="alert" *ngIf="!loggedIn">
-			Invalid Credentials!
+			{{alertMessage}}
 		</div>
 	</div>
 </div>
+

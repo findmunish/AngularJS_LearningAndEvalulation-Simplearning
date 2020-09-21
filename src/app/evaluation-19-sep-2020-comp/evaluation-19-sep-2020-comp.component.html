@@ -1,6 +1,6 @@
 <div class="jumbotron">
 	<h1>Customer Assignment</h1>
-  <h3 *ngIf="authenticationObj.loggedIn">Welcome {{authenticationObj.username}}!</h3>
+  <h3 *ngIf="authenticationObj.loggedIn">Welcome {{authenticationObj.username.toUpperCase()}}!</h3>
   <h3 *ngIf="!authenticationObj.loggedIn">Please login to authenticate yourself!</h3>
   <button
     type="button"

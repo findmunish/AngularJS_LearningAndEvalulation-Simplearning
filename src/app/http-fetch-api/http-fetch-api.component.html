@@ -1,1 +1,24 @@
-fetch api component
+<div class="card-body">
+	<h4>User List</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Username</th>
+        <th>E-Mail</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let user of users">
+				<td>{{user.id}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+			</tr>
+			<tr *ngIf="!users.length">
+				<td style="text-align: center;" colspan="4">No User(s) Found!</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

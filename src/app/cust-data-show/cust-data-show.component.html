@@ -1,0 +1,24 @@
+<div class="card-body">
+  <h4>Customer List</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customersInfo">
+      <td>{{customer.firstName}}</td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.contact}}</td>
+      <td>{{customer.email}}</td>
+    </tr>
+    <tr *ngIf="!customersInfo.length">
+      <td colspan="4">No Customer(s) Found!</td>
+    </tr>
+  </tbody>
+</table>
+</div>
