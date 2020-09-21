@@ -16,7 +16,7 @@ export class Evaluation19Sep2020CompComponent implements OnInit {
   addCustomerInfo(customer) {
     this.customers.push(customer);
   }
-  getAuthenticaton({username, loggedIn}) {
+  getAuthentication({username, loggedIn}) {
     this.authenticationObj = {username, loggedIn}
     if (this.authenticationObj.loggedIn === true ) {
       this.showView='form';

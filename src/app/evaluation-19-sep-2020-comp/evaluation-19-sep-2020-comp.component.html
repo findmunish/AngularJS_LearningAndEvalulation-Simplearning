@@ -1,1 +1,51 @@
-<p> eval files is back </p>
+<div class="jumbotron">
+	<h1>Customer Assignment</h1>
+  <h3 *ngIf="authenticationObj.loggedIn">Welcome {{authenticationObj.username}}!</h3>
+  <h3 *ngIf="!authenticationObj.loggedIn">Please login to authenticate yourself!</h3>
+  <button
+    type="button"
+    [disabled]="!authenticationObj.loggedIn"
+    class="btn btn-primary"
+    [ngClass]="{'btn-dark': showView === 'form'}"
+    (click)="showView = 'form'">
+      Form
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    [disabled]="!authenticationObj.loggedIn"
+    [ngClass]="{'btn-dark': showView === 'api'}"
+    (click)="showView = 'api'">
+      API
+  </button>
+  <button
+    type="button"
+    [disabled]="!authenticationObj.loggedIn"
+    class="btn btn-primary"
+    [ngClass]="{'btn-dark': showView === 'display'}"
+    (click)="showView = 'display'">
+      Display
+  </button>
+  <button
+    type="button"
+    [disabled]="authenticationObj.loggedIn"
+    class="btn btn-primary"
+    [ngClass]="{'btn-dark': showView === 'login'}"
+    (click)="showView = 'login'">
+      Login
+  </button>
+  <button
+    type="button"
+    [disabled]="!authenticationObj.loggedIn"
+    class="btn btn-primary"
+    [ngClass]="{'btn-dark': showView === 'logout'}"
+    (click)="authenticationObj = {username:'', loggedIn: false}; showView = 'login'">
+      Logout
+  </button>
+	<div class="card" *ngIf="showView" style="margin-top: 15px;">
+		<app-cust-form *ngIf="showView === 'form'" (addCustomer)="addCustomerInfo($event)"></app-cust-form>
+		<app-http-fetch-api *ngIf="showView === 'api'"></app-http-fetch-api>
+		<app-cust-data-show *ngIf="showView === 'display'" [customersInfo]="customers"></app-cust-data-show>
+		<app-login *ngIf="showView === 'login'" (setAuthentication)="getAuthentication($event)"></app-login>
+	</div>
+</div>
