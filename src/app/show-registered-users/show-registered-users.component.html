@@ -4,16 +4,31 @@
   <thead>
     <tr>
       <th>Login Id</th>
+      <th>Show/Hide</th>
       <th>Password</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
       <td>{{user.username}}</td>
-      <td>{{user.password}}</td>
+      <td>
+        <button
+          class="btn btn-secondary"
+          (click)="toggleButtonDisplay(user)">
+          {{user.label}}
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-danger"
+          (click)="toggleButtonDisplay(user)"
+          *ngIf="user.label!==SHOW_PASSWORD">
+          {{user.password}}
+        </button>
+      </td>
     </tr>
     <tr *ngIf="!users.length">
-      <td style="text-align: center;" colspan="2">No registered user(s) found!</td>
+      <td style="text-align: center;" colspan="3">No registered user(s) found!</td>
     </tr>
   </tbody>
 </table>
