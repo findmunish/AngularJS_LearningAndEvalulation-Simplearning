@@ -42,10 +42,19 @@
     (click)="authenticationObj = {username:'', loggedIn: false}; showView = 'login'">
       Logout
   </button>
+  <button
+    type="button"
+    [disabled]="authenticationObj.loggedIn"
+    class="btn-right btn-primary"
+    [ngClass]="{'btn-dark': showView === 'showUser'}"
+    (click)="showView = 'showUser'">
+      Registered Users
+  </button>
 	<div class="card" *ngIf="showView" style="margin-top: 15px;">
 		<app-cust-form *ngIf="showView === 'form'" (addCustomer)="addCustomerInfo($event)"></app-cust-form>
 		<app-http-fetch-api *ngIf="showView === 'api'"></app-http-fetch-api>
 		<app-cust-data-show *ngIf="showView === 'display'" [customersInfo]="customers"></app-cust-data-show>
 		<app-login *ngIf="showView === 'login'" (setAuthentication)="getAuthentication($event)"></app-login>
+    <app-show-registered-users *ngIf="showView === 'showUser'"></app-show-registered-users>
 	</div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { REGISTERED_USERS } from '../registeredUsers'
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  registeredUsers: any = [
-                            {username: 'Munish', password: 'pass123'},
-                            {username: 'Aman', password: 'pass123'},
-                            {username: 'Dinesh', password: 'pass123'},
-                            {username: 'Vishesh', password: 'pass123'},
-                            {username: 'Priya', password: 'pass1234'},
-                            {username: 'Rekha', password: 'pass1234'},
-                            {username: 'Disha', password: 'pass1234'},
-                            {username: 'Ritu', password: 'pass1234'},
-                          ]
+  registeredUsers: any = REGISTERED_USERS;
   loginForm = this.formBuilder.group({
     username: [''],
     password: [''],
@@ -27,7 +19,7 @@ export class LoginComponent implements OnInit {
   disableSubmitBtn = false;
   alertMessage = '';
   @Output() setAuthentication = new EventEmitter()
-
+  @Output() sendRegisteredUserList = new EventEmitter()
   constructor(private formBuilder: FormBuilder ) { }
 
   ngOnInit() {

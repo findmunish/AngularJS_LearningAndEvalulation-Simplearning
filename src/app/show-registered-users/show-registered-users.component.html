@@ -1,0 +1,20 @@
+<div class="card-body">
+  <h4>Customer List</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Login Id</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+    </tr>
+    <tr *ngIf="!users.length">
+      <td style="text-align: center;" colspan="2">No registered user(s) found!</td>
+    </tr>
+  </tbody>
+</table>
+</div>
