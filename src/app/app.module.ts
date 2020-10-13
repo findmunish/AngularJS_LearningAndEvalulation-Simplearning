@@ -23,11 +23,12 @@ import { CustDataShowComponent } from './cust-data-show/cust-data-show.component
 import { LoginComponent } from './login/login.component';
 import { HttpFetchApiComponent } from './http-fetch-api/http-fetch-api.component';
 import { ShowRegisteredUsersComponent } from './show-registered-users/show-registered-users.component';
+import { Assignment13Oct2020CompComponent } from './assignment-13-oct-2020-comp/assignment-13-oct-2020-comp.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, ParentCompComponent, ChildCompComponent, Assignment06Sep2020CompComponent, Assignment12Sep2020CompComponent, CustomerStatusCompComponent, Assignment13Sep2020CompComponent, CustomerFormDataComponent, ReactiveCustomerFormComponent,  Assignment19Sep2020CompComponent, HttpFetchCompComponent, Evaluation19Sep2020CompComponent, CustFormComponent, CustDataShowComponent, LoginComponent, HttpFetchApiComponent, ShowRegisteredUsersComponent],
+  declarations: [ AppComponent, HelloComponent, ParentCompComponent, ChildCompComponent, Assignment06Sep2020CompComponent, Assignment12Sep2020CompComponent, CustomerStatusCompComponent, Assignment13Sep2020CompComponent, CustomerFormDataComponent, ReactiveCustomerFormComponent,  Assignment19Sep2020CompComponent, HttpFetchCompComponent, Evaluation19Sep2020CompComponent, CustFormComponent, CustDataShowComponent, LoginComponent, HttpFetchApiComponent, ShowRegisteredUsersComponent, Assignment13Oct2020CompComponent],
   bootstrap:    [ AppComponent ],
   providers: [CustDataServiceService]
 })
